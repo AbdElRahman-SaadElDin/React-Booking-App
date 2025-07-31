@@ -1,0 +1,39 @@
+/* Force navbar height */
+nav {
+  height: 325px !important;
+  min-height: 325px !important;
+  max-height: 325px !important;
+}
+
+/* Force sidebar layout */
+.sidebar-container {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  position: relative !important;
+}
+
+.sidebar-header {
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.sidebar-nav {
+  flex: 1 !important;
+  flex-grow: 1 !important;
+  flex-shrink: 1 !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Force signup button to bottom */
+.sidebar-container > div:last-child {
+  position: absolute !important;
+  bottom: 24px !important;
+  left: 24px !important;
+  right: 24px !important;
+  z-index: 10 !important;
+}
