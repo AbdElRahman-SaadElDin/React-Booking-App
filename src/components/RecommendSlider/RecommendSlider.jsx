@@ -12,8 +12,8 @@ export default function RecommendSlider() {
 			try {
 				const res = await axiosInstance.get(`/recommended_hotels`);
 				setRecList(res?.data || []);
+				console.log(recList);
 			} catch (err) {
-				console.error("Error fetching products:", err);
 				setRecList([]);
 			}
 		};
@@ -45,24 +45,23 @@ export default function RecommendSlider() {
 				</a>
 			</div>
 			<div className='w-full px-6 pt-[24px] pb-10 align-start'>
-				<div className='w-[65.75rem]'>
-					<div style={{ width: 15000 }} className='mx-auto'>
-						<div className='w-full overflow-hidden'>
-							<div
-								className='flex gap-6 transition-transform duration-700 ease-in-out pb-2'
-								style={{
-									transform: `translateX(-${scrollIndex * CARD_WIDTH}px)`,
-								}}
-							>
-								{repeatedList.map((hotel, idx) => (
-									<div
-										key={(hotel.id || hotel.name) + "-" + idx}
-										className='flex-shrink-0'
-									>
-										<RecommendCard hotel={hotel} />
-									</div>
-								))}
-							</div>
+				<div className='w-full max-w-full overflow-x-hidden'>
+					<div className='w-[1100px] overflow-x-hidden'>
+						<div
+							className='flex gap-6 transition-transform duration-700 ease-in-out pb-2'
+							style={{
+								width: `${repeatedList.length * CARD_WIDTH}px`,
+								transform: `translateX(-${scrollIndex * CARD_WIDTH}px)`,
+							}}
+						>
+							{repeatedList.map((hotel, idx) => (
+								<div
+									key={(hotel.id || hotel.name) + "-" + idx}
+									className='flex-shrink-0'
+								>
+									<RecommendCard hotel={hotel} />
+								</div>
+							))}
 						</div>
 					</div>
 				</div>

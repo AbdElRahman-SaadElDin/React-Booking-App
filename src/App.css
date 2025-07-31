@@ -1,11 +1,9 @@
-/* Force navbar height */
 nav {
   height: 325px !important;
   min-height: 325px !important;
   max-height: 325px !important;
 }
 
-/* Force sidebar layout */
 .sidebar-container {
   display: flex !important;
   flex-direction: column !important;
@@ -29,7 +27,6 @@ nav {
   z-index: 5 !important;
 }
 
-/* Force signup button to bottom */
 .sidebar-container > div:last-child {
   position: absolute !important;
   bottom: 24px !important;
